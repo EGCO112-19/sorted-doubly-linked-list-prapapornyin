@@ -12,6 +12,7 @@ int deletes( LLPtr *sPtr, int value );
 int isEmpty( LLPtr sPtr );
 void insert( LLPtr *sPtr, int value );
 void printList( LLPtr currentPtr );
+void printListP(LLPtr currentPtr);
 void instructions( void );
 
 
@@ -125,3 +126,22 @@ void printList( LLPtr currentPtr )
       puts( "NULL\n" );
    } // end else
 } // end function printList
+
+void printListP(LLPtr currentPtr)
+{ 
+   // if list is empty
+   if ( isEmpty( currentPtr ) ) {
+      puts( "List is empty.\n" );
+   } // end if
+   else { 
+      puts( "The list is:" );
+
+      
+      while ( currentPtr != NULL ) { 
+         printf( "%d --> ", currentPtr->data );
+         currentPtr = currentPtr->nextPtr;   
+      } // end while
+
+      puts( "NULL\n" );
+   } // end else
+} // end function printListP
